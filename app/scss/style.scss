@@ -13,7 +13,7 @@ body {
     }
 }
 
-.card{
+.card {
     @include centered;
     background-color: $white;
     width: 20.4375rem;
@@ -27,7 +27,7 @@ body {
         width: 21.9375rem;
     }
 
-    h2, h3, p {
+    h1, h2, h3, p {
         margin-top: 0;
         color: $desaturatedblue;
     }
@@ -45,6 +45,10 @@ body {
         transform: translate(-50%, -50%);
         border-radius: 4rem;
         border: 6px solid white;
+
+        @media (min-width: 63em) {
+            width: auto;
+        }
     }
 
     &__center {
