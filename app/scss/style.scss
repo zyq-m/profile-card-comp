@@ -1,0 +1,94 @@
+@import 'globals';
+@import 'variables';
+
+body {
+    background-color: $darkcyan;
+    background-image: url(../images/bg-pattern-top.svg), url(../images/bg-pattern-bottom.svg);
+    background-position: top -34rem left -50rem, bottom -40rem right -46rem;
+    background-repeat: no-repeat;
+    height: 100vh;
+
+    @media (min-width: 68.75em) {
+        background-position: top -29rem left -15rem, bottom -33rem right -12rem;;
+    }
+}
+
+.card{
+    @include centered;
+    background-color: $white;
+    width: 20.4375rem;
+    max-width: 100%;
+    height: 23.5rem;
+    border-radius: 0.8rem;
+    text-align: center;
+    overflow: hidden;
+
+    @media (min-width: 63em) {
+        width: 21.9375rem;
+    }
+
+    h2, h3, p {
+        margin-top: 0;
+        color: $desaturatedblue;
+    }
+
+    &__bg {
+        background-image: url(../images/bg-pattern-card.svg);
+        background-size: cover;
+        height: 8.8125rem;
+    }
+    
+    &__dp {
+        width: 6.125rem;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 4rem;
+        border: 6px solid white;
+    }
+
+    &__center {
+        margin-top: 4.3rem;
+    }
+
+    &__name {
+        font-size: $mainfont;
+        margin-bottom: 0.4rem;
+    }
+    
+    .card__age, .card__location, .card__stats--desc {
+        color: $gray;
+        font-weight: lighter;
+    }
+
+    &__age {
+        margin-left: 0.3rem;
+    }
+
+    &__location {
+        font-size: 0.875rem;
+        margin-bottom: $linemargin;
+    }
+
+    &__line {
+        border-top: 1px solid $gray;
+        margin-bottom: $linemargin;
+        opacity: 0.5;
+    }
+
+    &__stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 0 1.4375rem;
+
+        &--no {
+            font-size: $mainfont;
+            margin-bottom: 0.4rem;
+        }
+
+        &--desc {
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+        }
+    }
+}
